@@ -40,8 +40,10 @@ SELECT id,
     nome,
     setor,
     cargo,
-    salario,
-    addNoturno,
-    (salario + IFNULL(addNoturno,0)) AS 'Salario + Adicional' 
+    CONCAT('R$ ', FORMAT(salario,2,'pt_BR')) AS 'Salário',
+    CONCAT('R$ ', FORMAT(addNoturno,2,'pt_BR')) AS 'Adicional Noturno',
+    CONCAT('R$ ', FORMAT( salario + IFNULL(addNoturno,0),2,'pt-BR')) AS 'Salario + Adicional',
+    date_format(data_admissao, '%d/%m/%Y') AS 'Data Admissão',
+    date_format(proxFerias, '%d/%m/%Y') AS 'Próxima data de Férias'
 FROM colaboradores;
 

@@ -25,10 +25,8 @@ VALUES
 ('Steam Deck', 'Console Portátil', 1, 3499.99, 2, 'Console portátil da Valve com acesso à biblioteca Steam e excelente performance.');
 
 
--- Exibirá todos produtos que tiverem valor maior que 500
 select * from eletronicGames where valor > 500;
 
--- Exibirá todos que tiverem valor menor que 500
 select * from eletronicGames where valor < 500;
 
 update eletronicGames set quantidadeEstoque = 12 where id in(1,2,3);
